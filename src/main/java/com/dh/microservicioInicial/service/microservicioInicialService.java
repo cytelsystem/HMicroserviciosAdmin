@@ -3,9 +3,10 @@ package com.dh.microservicioInicial.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClimaService {
+public class microservicioInicialService {
 
-    public Integer getTemperatura(String city, String country) {
+    public Integer getNombres(String nombre, String apellido) {
+
         return 25;
     }
 }
