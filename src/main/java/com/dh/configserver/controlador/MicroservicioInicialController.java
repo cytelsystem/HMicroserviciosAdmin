@@ -1,6 +1,6 @@
-package com.dh.microservicioInicial.controlador;
+package com.dh.configserver.controlador;
 
-import com.dh.microservicioInicial.service.microservicioInicialService;
+import com.dh.configserver.service.microservicioInicialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
