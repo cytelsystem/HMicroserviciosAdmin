@@ -1,6 +1,6 @@
-package com.dh.climaservice.controlador;
+package com.dh.microservicioInicial.controlador;
 
-import com.dh.climaservice.service.ClimaService;
+import com.dh.microservicioInicial.service.ClimaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/weather")
-public class ClimaController {
+public class MicroservicioInicialController {
 
     @Autowired
     private ClimaService climaService;

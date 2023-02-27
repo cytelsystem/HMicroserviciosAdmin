@@ -1,13 +1,13 @@
-package com.dh.climaservice;
+package com.dh.microservicioInicial;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ClimaServiceApplication {
+public class MicroservicioInicialApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClimaServiceApplication.class, args);
+		SpringApplication.run(MicroservicioInicialApplication.class, args);
 	}
 
 }

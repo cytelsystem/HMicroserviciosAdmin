@@ -1,4 +1,4 @@
-package com.dh.climaservice.service;
+package com.dh.microservicioInicial.service;
 
 import org.springframework.stereotype.Service;
 
