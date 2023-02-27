@@ -10,4 +10,4 @@ spring:
       server:
         git:
           uri: https://github.com/cytelsystem/BackEndII
-          default-label: configServiceCentralizado
+          default-label: ServidorCentralizadoConfiguracion
