@@ -1,0 +1,5 @@
+server:
+  port: ${PORT:8885}
+
+denominaciones_billete: 10,20,50,100,200,500,1000
+cantidad_maxima_efectivo: 3000000

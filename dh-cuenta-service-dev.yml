@@ -1,0 +1,4 @@
+server:
+  port: ${PORT:9999}
+
+message: Consumer configuration server is alive for DEV Camada 4!

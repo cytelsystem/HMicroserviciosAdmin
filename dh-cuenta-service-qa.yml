@@ -1,0 +1,4 @@
+server:
+  port: ${PORT:8889}
+
+message: Consumer configuration server is alive for QA 2!

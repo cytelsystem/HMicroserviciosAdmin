@@ -1,0 +1,5 @@
+server:
+  port: ${PORT:8887}
+
+max_login_fail: 3
+domain_mail_enabled: Outlook",Gmail,Digitalhouse
