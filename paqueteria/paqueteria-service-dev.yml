@@ -6,7 +6,7 @@ idRandom: ${random.value}
 
 spring:
   application:
-    name: ms-course
+    name: paqueteria-service
 eureka:
   instance:
     hostname: localhost
