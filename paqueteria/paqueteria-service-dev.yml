@@ -1,4 +1,3 @@
 server:
   port: ${PORT:9999}
 
-message: configuracion de paqueteria DEV
