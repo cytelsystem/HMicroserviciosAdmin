@@ -15,7 +15,18 @@ public class MicroservicioInicialController {
     private microservicioInicialService servicedatos;
 
     @GetMapping
-    public Integer getTemperatura(@RequestParam String nombre, @RequestParam String apellido) {
+    public String microservicioFunciona() {
+        return "Este microservicio esta funcionando";
+    }
+
+    @GetMapping("/datos")
+    public String getdatos(@RequestParam String nombre, @RequestParam String apellido) {
         return servicedatos.getNombres(nombre, apellido);
     }
+    @GetMapping("/saludar")
+    public String getSaludar() {
+        return "Hola como estas";
+    }
+
+
 }

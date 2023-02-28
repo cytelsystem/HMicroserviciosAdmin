@@ -5,8 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class microservicioInicialService {
 
-    public Integer getNombres(String nombre, String apellido) {
 
-        return 25;
+    private String nombreApellido;
+    public String getNombres(String nombre, String apellido) {
+
+
+
+        return "Hola Como estas :" + nombre + " " + apellido;
     }
 }
