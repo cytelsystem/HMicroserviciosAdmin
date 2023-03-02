@@ -1,7 +1,12 @@
 
 
-server:
-  port: ${PORT:${SERVER_PORT:0}}
+# server:
+#   port: ${PORT:${SERVER_PORT:0}}
+  
+ server:
+  port: ${PORT:8889}
+
+message: configuracion de paqueteria QA
 
 idRandom: ${random.value}
 
