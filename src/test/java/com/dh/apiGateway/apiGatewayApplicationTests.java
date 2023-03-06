@@ -1,10 +1,10 @@
-package com.dh.microservicioInicial;
+package com.dh.apiGateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClimaServiceApplicationTests {
+class apiGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {

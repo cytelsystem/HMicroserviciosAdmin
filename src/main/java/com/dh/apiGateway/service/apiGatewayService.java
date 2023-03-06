@@ -1,9 +1,9 @@
-package com.dh.microservicioInicial.service;
+package com.dh.apiGateway.service;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class microservicioInicialService {
+public class apiGatewayService {
 
     private String nombreApellido;
     public String getNombres(String nombre, String apellido) {
