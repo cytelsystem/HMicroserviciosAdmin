@@ -12,10 +12,22 @@ spring:
       default-filters:
         - name: FilterCustom
       routes:
+        - id: proveedores #identificador de la ruta
+          uri: lb://microservicioProveedores #URL donde se hará el redirect segun el predicado definido
+          predicates: #Reglas de analisis de request
+            - Path=/proveedores/** #path de url de request a considerar
+        - id: saludar #identificador de la ruta
+          uri: lb://microservicioProveedores #URL donde se hará el redirect segun el predicado definido
+          predicates: #Reglas de analisis de request
+            - Path=/saludar/** #path de url de request a considerar
         - id: mscourse #identificador de la ruta
           uri: lb://ms-course #URL donde se hará el redirect segun el predicado definido
           predicates: #Reglas de analisis de request
             - Path=/course/** #path de url de request a considerar
+        - id: cliente
+          uri: lb://microservicioClientes
+          predicates:
+            - Path=/proveedores/**   
         - id: mssubscription
           uri: lb://ms-subscription
           predicates:
