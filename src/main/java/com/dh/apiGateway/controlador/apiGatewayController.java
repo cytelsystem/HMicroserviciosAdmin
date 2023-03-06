@@ -22,9 +22,9 @@ public class apiGatewayController {
     public String getdatos(@RequestParam String nombre, @RequestParam String apellido) {
         return servicedatos.getNombres(nombre, apellido);
     }
-    @GetMapping("/saludar")
-    public String getSaludar() {
-        return "Hola como estas";
-    }
+//    @GetMapping("/saludar")
+//    public String getSaludar() {
+//        return "Hola como estas";
+//    }
 
 }
