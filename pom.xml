@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dh</groupId>
-	<artifactId>MicroservicioInicial</artifactId>
+	<artifactId>apigateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ClimaService</name>
-	<description>MicroservicioInicial</description>
+	<name>apigateway</name>
+	<description>Api Gateway</description>
 	<properties>
 		<java.version>18</java.version>
 		<spring-cloud.version>2021.0.5</spring-cloud.version>
@@ -20,34 +20,43 @@
 
 
 	<dependencies>
+<!--		Poder generar un EndPoint y levantar el Tomcat-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+<!--		conexion con el config server configuracion centralizada-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bootstrap</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
-		</dependency>
+		<!--Decubrimiento de todos los microservicios-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+<!--		Poder cambiar el archivo propierties a bootstrap.yml y comunicarnos con el configServer-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>
+		<!--		ApiGateway-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+<!--		Balanceo de peticiones que viene de afuera-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
