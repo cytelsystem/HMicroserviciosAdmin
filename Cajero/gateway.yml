@@ -27,11 +27,11 @@ spring:
         - id: cliente
           uri: lb://microservicioClientes
           predicates:
-            - Path=/proveedores/**   
-        - id: mssubscription
-          uri: lb://ms-subscription
+            - Path=/proveedores/**
+        - id: microservicioCliente
+          uri: lb://microservicioCliente
           predicates:
-            - Path=/subscription/**              
+            - Path=/datos/**              
 
 info:
   app:
