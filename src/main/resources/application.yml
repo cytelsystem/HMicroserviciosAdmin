@@ -11,4 +11,4 @@ spring:
         git:
           uri: https://github.com/cytelsystem/BackEndII
           default-label: ServidorCentralizadoConfiguracion
-          search-paths: caja
+          search-paths: Cajero
