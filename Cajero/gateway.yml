@@ -29,7 +29,7 @@ spring:
           predicates:
             - Path=/proveedores/**
         - id: microservicioCliente
-          uri: lb://microservicioCliente
+          uri: lb://microservicioClientes
           predicates:
             - Path=/datos/**              
 
