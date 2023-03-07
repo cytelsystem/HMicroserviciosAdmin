@@ -20,7 +20,7 @@ spring:
           uri: lb://microservicioProveedores #URL donde se hará el redirect segun el predicado definido
           predicates: #Reglas de analisis de request
             - Path=/saludar/** #path de url de request a considerar
-        - id: microservicioClientes
+        - id: clientesSaludar
           uri: lb://microservicioClientes
           predicates:
             - Path=/clientesSaludar/**              
