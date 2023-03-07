@@ -14,18 +14,21 @@ public class FilterCustom extends AbstractGatewayFilterFactory<FilterCustom.Conf
     public FilterCustom() {
         super(FilterCustom.Config.class);
     }
-
     @Override
     public GatewayFilter apply(Config config) {
         //filtro previo a la invocación del servicio real asociado al gateway
 
-        return (exchange, chain) -> chain.filter(exchange).then(Mono.fromRunnable(() -> {
-            //filtro posterior a la invocación del servicio asociado al gateway
+        return (exchange, chain) -> {
 
-            System.out.printf("\nTime response " + Calendar.getInstance().getTime());
-        }));
+            //filtro previo a la invocación del servicio real asociado al gateway
+            System.out.printf("\nPath requested " + exchange.getRequest().getPath());
+
+            return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+                //filtro posterior a la invocación del servicio asociado al gateway
+                System.out.printf("\nTime response " + Calendar.getInstance().getTime());
+            }));
+        };
     }
-
     public static class Config {
 
     }
