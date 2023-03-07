@@ -23,7 +23,10 @@ spring:
         - id: clientesSaludar
           uri: lb://microservicioClientes
           predicates:
-            - Path=/clientesSaludar/**              
+            - Path=/clientesSaludar/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-respons-header, custom-user-response-header
 
 info:
   app:
