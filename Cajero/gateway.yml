@@ -28,10 +28,10 @@ spring:
           uri: lb://microservicioClientes
           predicates:
             - Path=/proveedores/**
-        - id: microservicioCliente
+        - id: microservicioClientes
           uri: lb://microservicioClientes
           predicates:
-            - Path=/datos/**              
+            - Path=/clientesSaludar/**              
 
 info:
   app:
