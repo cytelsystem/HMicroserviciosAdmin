@@ -21,7 +21,7 @@ spring:
           predicates: #Reglas de analisis de request
             - Path=/saludar/** #path de url de request a considerar
         - id: clientesSaludar
-          uri: lb://microservicioClientes
+          uri: lb://microservicioCliente
           predicates:
             - Path=/clientesSaludar/**
           filters:
