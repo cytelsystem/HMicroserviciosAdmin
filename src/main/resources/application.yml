@@ -9,6 +9,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/cytelsystem/BackEndII
+          uri: https://github.com/cytelsystem/ParcialBackEndII
           default-label: ServidorCentralizadoConfiguracion
-          search-paths: Cajero
+          search-paths: Parcial
