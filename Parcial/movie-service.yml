@@ -3,6 +3,8 @@ server:
 
 idRandom: ${random.value}
 
+message: Acción
+
 spring:
   application:
     name: movie-service
