@@ -1,10 +1,10 @@
-package com.dh.configserver;
+package com.dh.movieservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class configserverApplicationTests {
+class MovieServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
