@@ -1,13 +1,13 @@
-package com.dh.configserver;
+package com.dh.catalogservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class configserverApplicationTests {
+class CatalogServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
