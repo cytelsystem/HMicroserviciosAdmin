@@ -1,4 +1,4 @@
-package com.dh.configserver;
+package com.dh.configServer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
