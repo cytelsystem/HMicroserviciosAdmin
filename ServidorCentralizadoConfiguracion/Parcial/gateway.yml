@@ -1,0 +1,40 @@
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      default-filters:
+        - name: FilterCustom
+      routes:
+        - id: cataloggenre
+          uri: lb://catalog-service
+          predicates:
+            - Path=/catalog/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-respons-header, custom-user-response-header
+
+info:
+  app:
+    name: ${spring.application.name}
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceURL:
+      defaultZone: http://localhost:8761/eureka
+  management:
+    endpoint:
+      gateway:
+        enabled: true
+    endpoints: 
+      web:
+        exposure:
+          include: gateway
