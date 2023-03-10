@@ -13,9 +13,9 @@ spring:
         - name: FilterCustom
       routes:
         - id: cataloggenre
-          uri: lb://microservicioCliente
+          uri: lb://catalog-service
           predicates:
-            - Path=/catalog-service/**
+            - Path=/catalog/**
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-respons-header, custom-user-response-header
