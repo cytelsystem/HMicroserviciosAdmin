@@ -10,5 +10,6 @@ spring:
       server:
         git:
           uri: https://github.com/cytelsystem/ParcialBackEndII
-          default-label: ServidorCentralizadoConfiguracion
-          search-paths: Parcial
+          default-label: master
+          search-paths: ServidorCentralizadoConfiguracion/Parcial
+
