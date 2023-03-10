@@ -25,5 +25,6 @@ public class DataLoader implements ApplicationRunner {
         repository.save(new Movie(6L, "shadow", "acao", "what"));
         repository.save(new Movie(7L, "boné", "romance", "what"));
         repository.save(new Movie(8L, "xícara", "romance", "what"));
+        repository.save(new Movie(9L, "Black Adam", "Accion", "https://en.wikipedia.org/wiki/Black_Adam_(film)"));
     }
 }
