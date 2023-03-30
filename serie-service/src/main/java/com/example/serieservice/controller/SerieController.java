@@ -28,6 +28,7 @@ public class SerieController {
 
     @GetMapping("/{genre}")
     public List<Serie> getSerieByGenre(@PathVariable String genre) {
+
         return serieService.getSeriesBygGenre(genre);
     }
 

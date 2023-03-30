@@ -25,6 +25,7 @@ public class SerieService {
     }
 
     public List<Serie> getSeriesBygGenre(String genre) {
+
         return repository.findAllByGenre(genre);
     }
 
