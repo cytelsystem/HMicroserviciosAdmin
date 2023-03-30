@@ -1,11 +1,20 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+#  port: ${PORT:${SERVER_PORT:0}}
+  port: ${PORT:50797}
 
 idRandom: ${random.value}
 
 spring:
   application:
     name: serie-service
+  mongodb:
+    embedded:
+      version: 4.0.2
+  data:
+    mongodb:
+      database: test
+      port: 27017
+
 eureka:
   instance:
     hostname: localhost
@@ -16,11 +25,3 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-spring:
-  mongodb:
-    embedded:
-      version: 4.0.2
-  data:
-    mongodb:
-      database: test
-      port: 27017

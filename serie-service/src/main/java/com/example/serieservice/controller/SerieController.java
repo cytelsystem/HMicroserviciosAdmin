@@ -21,6 +21,11 @@ public class SerieController {
         this.serieService = serieService;
     }
 
+    @GetMapping("/prueba")
+    public String prueba(){
+
+        return "hola microservicio serieService responde";
+    }
     @GetMapping
     public List<Serie> getAll() {
         return serieService.getAll();
