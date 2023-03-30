@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e987e92-fa9a-4fcb-a431-e21eefb379b5" name="Changes" comment="" />
+    <list default="true" id="9e987e92-fa9a-4fcb-a431-e21eefb379b5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,12 +35,16 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/HECTORJM/Proyectos/java/BackEndII/ParcialBackEndII/ServidorCentralizadoConfiguracion/Parcial&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\HECTORJM\Proyectos\java\BackEndII\ParcialBackEndII\ServidorCentralizadoConfiguracion\Parcial" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\HECTORJM\Proyectos\java\BackEndII\ParcialBackEndII\.idea" />
       <recent name="E:\HECTORJM\Proyectos\java\BackEndII\ParcialBackEndII" />
