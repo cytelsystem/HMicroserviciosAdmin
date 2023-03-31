@@ -15,6 +15,7 @@ spring:
     jpa:
       hibernate.ddl-auto: create
       generate-ddl: true
+      properties: hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
       show-sql: true
 eureka:
   instance:
