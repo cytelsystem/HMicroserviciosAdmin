@@ -17,19 +17,11 @@ import java.io.Serializable;
 public class Movie implements Serializable {
 
 
-
     @Serial
 	private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "novieSecuence")
-    @SequenceGenerator(name = "novieSecuence", sequenceName = "novieSecuence", allocationSize = 1)
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
-    @Column(name = "id", nullable = false)
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
