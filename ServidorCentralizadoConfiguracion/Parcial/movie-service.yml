@@ -12,12 +12,16 @@ spring:
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: root
-    jpa:
-      generate-ddl: true
-      show-sql: true
+  jpa:
+    generate-ddl: true
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
       hibernate:
-        ddl-auto: create-drop
-
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
 eureka:
   instance:
     hostname: localhost
