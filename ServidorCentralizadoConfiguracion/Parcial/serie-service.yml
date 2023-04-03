@@ -4,16 +4,35 @@ server:
 
 idRandom: ${random.value}
 
+#spring:
+#  application:
+#   name: serie-service
+#  mongodb:
+#    embedded:
+#      version: 4.0.2
+#  data:
+#    mongodb:
+#      database: test
+#      port: 27017
+      
 spring:
   application:
     name: serie-service
-  mongodb:
-    embedded:
-      version: 4.0.2
-  data:
-    mongodb:
-      database: test
-      port: 27017
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+  jpa:
+    generate-ddl: true
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
 
 eureka:
   instance:
