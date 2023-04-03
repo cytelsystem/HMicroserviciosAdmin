@@ -21,8 +21,8 @@ public class SerieController {
         this.serieService = serieService;
     }
 
-    @GetMapping("/prueba")
-    public String prueba(){
+    @GetMapping("/seriePrueba")
+    public String seriePrueba(){
 
         return "hola microservicio serieService responde";
     }
