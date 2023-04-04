@@ -1,13 +1,13 @@
-package com.example.serieservice;
+package com.dh.serieService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SerieServiceApplicationTests {
+class MicroservicioProveedoresApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }

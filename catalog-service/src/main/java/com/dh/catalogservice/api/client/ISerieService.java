@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient("serie-service")
 public interface ISerieService {
-    @GetMapping("series/seriePrueba")
-    String seriePrueba();
+    @GetMapping("/saludarserie")
+    String getSaludarSerie();
 }

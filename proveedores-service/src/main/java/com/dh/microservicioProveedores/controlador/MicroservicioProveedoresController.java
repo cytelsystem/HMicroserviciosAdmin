@@ -16,7 +16,7 @@ public class MicroservicioProveedoresController {
     private microservicioProveedoresService servicedatos;
 
 
-    @GetMapping("/saludar")
+    @GetMapping("/saludarproveedor")
     public String getSaludar() {
         return "Hola como estas saludo desde proveedores";
     }

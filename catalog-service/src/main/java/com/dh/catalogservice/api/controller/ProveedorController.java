@@ -10,16 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class SerieController {
+public class ProveedorController {
 
     @Autowired
-    private ISerieService interfaceSerie;
+    private IProveedorService interfaceProveedor;
 
+    @GetMapping("saludarproveedor")
+    public ResponseEntity<String> find() {
 
-    @GetMapping("saludarserie")
-    public ResponseEntity<String> SerieSaludar() {
-
-        return ResponseEntity.ok(interfaceSerie.getSaludarSerie());
+        return ResponseEntity.ok(interfaceProveedor.getSaludarProveedor());
     }
 
 
