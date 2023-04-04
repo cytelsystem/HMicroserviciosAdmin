@@ -7,6 +7,13 @@ idRandom: ${random.value}
 spring:
   application:
     name: catalog-service
+  mongodb:
+    embedded:
+      version: 4.0.2
+  data:
+    mongodb:
+      database: mscatalogo
+      port: 27017
 eureka:
   instance:
     hostname: localhost

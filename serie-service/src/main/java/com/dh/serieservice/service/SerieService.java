@@ -13,13 +13,6 @@ import java.util.List;
 public class SerieService {
 
     private final SerieRepository repository;
-    private String nombreApellido;
-
-    public String getNombres(String nombre, String apellido) {
-
-        return "Hola Como estas :" + nombre + " " + apellido;
-    }
-
 
     public SerieService(SerieRepository repository) {
         this.repository = repository;

@@ -17,17 +17,6 @@ public class SerieController {
     private SerieService servicedatos;
 
 
-    @GetMapping("/datos")
-    public String getdatos(@RequestParam String nombre, @RequestParam String apellido) {
-        return servicedatos.getNombres(nombre, apellido);
-    }
-
-    @GetMapping("/saludarserie")
-    public String getSaludar() {
-        return "Hola como estas saludo desde serie";
-    }
-
-
     public SerieController(SerieService serieService) {
         this.servicedatos = serieService;
     }
