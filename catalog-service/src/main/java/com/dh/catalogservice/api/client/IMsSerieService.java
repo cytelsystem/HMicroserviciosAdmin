@@ -5,7 +5,11 @@ import com.dh.catalogservice.api.configuration.CustomLoadBalancerConfiguration;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.dh.catalogservice.domain.model.Serie;
+
+import java.util.List;
 
 
 @FeignClient("serie-service")
@@ -16,5 +20,8 @@ public interface IMsSerieService {
 
     @GetMapping("/series/datos")
     String getdatos(@RequestParam String nombre, @RequestParam String apellido);
+
+    @GetMapping("/series/{genre}")
+    List<Serie> getSerieByGenre(@PathVariable String genre);
 
 }

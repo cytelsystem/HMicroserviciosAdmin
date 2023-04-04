@@ -1,12 +1,13 @@
 package com.dh.catalogservice.api.controller;
 
 import com.dh.catalogservice.api.client.IMsSerieService;
+import com.dh.catalogservice.domain.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import com.dh.catalogservice.domain.model.Serie;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -25,6 +26,12 @@ public class MsSerieController {
     @GetMapping("/series/datos")
     String getdatos(@RequestParam String nombre, @RequestParam String apellido) {
         return interfaceSerie.getdatos(nombre, apellido);
+    }
+
+    @GetMapping("/series/{genre}")
+    public List<Serie> getSerieByGenre(@PathVariable String genre) {
+
+        return interfaceSerie.getSerieByGenre(genre);
     }
 
 

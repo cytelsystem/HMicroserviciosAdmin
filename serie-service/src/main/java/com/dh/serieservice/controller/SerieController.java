@@ -4,7 +4,7 @@ import com.dh.serieservice.service.SerieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import com.example.serieservice.model.Serie;
+import com.dh.serieservice.model.Serie;
 
 import java.util.List;
 

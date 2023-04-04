@@ -1,4 +1,4 @@
-package com.example.serieservice.model;
+package com.dh.serieservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
