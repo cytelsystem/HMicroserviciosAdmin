@@ -1,7 +1,6 @@
 package com.dh.catalogservice.api.controller;
 
 import com.dh.catalogservice.api.client.IProveedorService;
-import com.dh.catalogservice.api.client.ISerieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

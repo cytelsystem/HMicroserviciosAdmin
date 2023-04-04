@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="MicroservicioProveedoresApplication" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.dh.microservicioProveedores.MicroservicioProveedoresApplication" />
+    <option name="MAIN_CLASS_NAME" value="com.dh.MsSerieService.MsSerieServiceApplication" />
     <module name="microservicioClientes" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.dh.microservicioProveedores.*" />
+        <option name="PATTERN" value="com.dh.MsSerieService.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

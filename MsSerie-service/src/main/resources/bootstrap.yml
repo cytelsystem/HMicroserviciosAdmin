@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-serie-service
+    name: MsSerieService
   cloud:
     config:
       uri: http://localhost:8888

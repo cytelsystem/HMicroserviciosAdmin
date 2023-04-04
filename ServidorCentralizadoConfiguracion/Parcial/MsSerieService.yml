@@ -6,7 +6,7 @@ idRandom: ${random.value}
 
 spring:
   application:
-    name: ms-serie-service
+    name: MsSerieService
   mongodb:
     embedded:
       version: 4.0.2

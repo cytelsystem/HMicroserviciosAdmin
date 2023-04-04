@@ -1,7 +1,6 @@
 package com.dh.catalogservice.api.controller;
 
-import com.dh.catalogservice.api.client.IProveedorService;
-import com.dh.catalogservice.api.client.ISerieService;
+import com.dh.catalogservice.api.client.IMsSerieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class SerieController {
+public class MsSerieController {
 
     @Autowired
-    private ISerieService interfaceSerie;
+    private IMsSerieService interfaceSerie;
 
 
     @GetMapping("saludarserie")

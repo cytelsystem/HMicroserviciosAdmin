@@ -1,7 +1,7 @@
 package com.dh.catalogservice.api.controller;
 
 import com.dh.catalogservice.api.client.IMovieService;
-import com.dh.catalogservice.api.client.ISerieService;
+import com.dh.catalogservice.api.client.IMsSerieService;
 import com.dh.catalogservice.domain.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class CatalogController {
 
     @Autowired
     private IMovieService MovieService;
-    private ISerieService SerieService;
+    private IMsSerieService SerieService;
 
 //    private final CatalogService service;
 

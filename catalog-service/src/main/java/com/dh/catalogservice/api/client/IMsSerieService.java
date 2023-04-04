@@ -5,8 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
-@FeignClient("serie-service")
-public interface ISerieService {
+@FeignClient("MsSerieService")
+public interface IMsSerieService {
     @GetMapping("/saludarserie")
     String getSaludarSerie();
 }

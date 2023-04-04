@@ -1,4 +1,4 @@
-package com.dh.serieService;
+package com.dh.MsSerieService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

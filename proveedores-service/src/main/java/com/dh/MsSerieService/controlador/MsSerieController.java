@@ -1,21 +1,20 @@
-package com.dh.serieService.controlador;
+package com.dh.MsSerieService.controlador;
 
-import com.dh.serieService.service.SerieService;
+import com.dh.MsSerieService.service.MsSerieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
-public class SerieController {
+public class MsSerieController {
 
     @Autowired
-    private SerieService servicedatos;
+    private MsSerieService servicedatos;
 
 
     @GetMapping("/saludarserie")
-    public String getSaludarSerie() {
-
+    public String getSaludar() {
         return "Hola como estas saludo desde serie";
     }
 

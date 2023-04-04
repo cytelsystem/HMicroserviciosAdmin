@@ -1,13 +1,13 @@
-package com.dh.serieService;
+package com.dh.MsSerieService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SerieServiceApplication {
+public class MsSerieServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SerieServiceApplication.class, args);
+		SpringApplication.run(MsSerieServiceApplication.class, args);
 	}
 
 }
