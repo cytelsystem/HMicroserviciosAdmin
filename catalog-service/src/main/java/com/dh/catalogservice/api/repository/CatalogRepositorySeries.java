@@ -6,6 +6,7 @@ import com.dh.catalogservice.domain.model.Serie;
 
 import java.util.List;
 @Repository
-public interface CatalogRepository extends MongoRepository<Serie, Long> {
+public interface CatalogRepositorySeries extends MongoRepository<Serie, Long > {
     List<Serie> findAllByGenre(String genre);
 }
+

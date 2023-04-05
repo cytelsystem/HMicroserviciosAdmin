@@ -1,6 +1,8 @@
 package com.dh.catalogservice;
 
-import com.dh.catalogservice.api.repository.CatalogRepository;
+import com.dh.catalogservice.api.repository.CatalogRepositorySeries;
+import com.dh.catalogservice.api.repository.CatalogRepositoryMovies;
+import com.dh.catalogservice.domain.model.MovieCatalogo;
 import com.dh.catalogservice.domain.model.Serie;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,7 +26,7 @@ public class CatalogServiceApplication {
 
 
     @Bean
-    public CommandLineRunner loadData(CatalogRepository repository) {
+    public CommandLineRunner loadData(CatalogRepositorySeries repository) {
         String baseUrl = "www.netflix.com/series";
 
         return (args) -> {
@@ -74,4 +76,25 @@ public class CatalogServiceApplication {
 
 
 
+    @Bean
+    public CommandLineRunner loadDataMovieCatalogo(CatalogRepositoryMovies repositoryMovies) {
+
+        return (args) -> {
+            repositoryMovies.save(new MovieCatalogo(1L, "filme", "terror", "what"));
+            repositoryMovies.save(new MovieCatalogo(2L, "borboleta", "terror", "what"));
+            repositoryMovies.save(new MovieCatalogo(3L, "adedonha", "terror", "what"));
+            repositoryMovies.save(new MovieCatalogo(4L, "pajero", "terror", "what"));
+            repositoryMovies.save(new MovieCatalogo(5L, "dakar", "acao", "what"));
+            repositoryMovies.save(new MovieCatalogo(6L, "shadow", "acao", "what"));
+            repositoryMovies.save(new MovieCatalogo(7L, "boné", "romance", "what"));
+            repositoryMovies.save(new MovieCatalogo(8L, "xícara", "romance", "what"));
+            repositoryMovies.save(new MovieCatalogo(9L, "Black Adam", "Accion", "what"));
+
+
+        };
+    }
+
+
+
 }
+

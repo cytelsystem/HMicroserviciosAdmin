@@ -16,16 +16,6 @@ public class SerieController {
     private IMsSerieService interfaceSerie;
 
 
-    @GetMapping("/series/saludarserie")
-    public ResponseEntity<String> SerieSaludar() {
-
-        return ResponseEntity.ok(interfaceSerie.getSaludar());
-    }
-
-    @GetMapping("/series/datos")
-    String getdatos(@RequestParam String nombre, @RequestParam String apellido) {
-        return interfaceSerie.getdatos(nombre, apellido);
-    }
 
     @GetMapping("/series/{genre}")
     public List<Serie> getSerieByGenre(@PathVariable String genre) {
