@@ -12,7 +12,7 @@ spring:
       version: 4.0.2
   data:
     mongodb:
-      database: netflix
+      database: netflixcatalogo
       port: 27017
 eureka:
   instance:
