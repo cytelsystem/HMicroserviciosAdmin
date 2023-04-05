@@ -9,8 +9,8 @@ spring:
     name: movie-service
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/netflix
-    initialization-mode: always
+#    url: jdbc:mysql://localhost:3306/netflix
+    url: jdbc:mysql://localhost:3306/netflix?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true
     username: root
     password: root
   jpa:
