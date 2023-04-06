@@ -31,14 +31,13 @@ management.endpoint.health.show-details: always
 resilience4j.circuitbreaker:
   instances:
     subscription:
-      allowHealthIndicatorToFail: false
       registerHealthIndicator: true
-      slidingWindowType: COUNT_BASED
       slidingWindowSize: 5
-      failureRateThreshold: 50
-      waitDurationInOpenState: 15000
       permittedNumberOfCallsInHalfOpenState: 3
-      automaticTransitionFromOpenToHalfOpenEnabled: true
+      slidingWindowType: TIME_BASED
+      minimunNumberOfCalls: 4
+      waitDurationInOpenState: 15000
+      failureRateThreshold: 50
       eventConsumerBufferSize: 10
       recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
 
