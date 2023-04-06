@@ -21,15 +21,13 @@ public class MovieController {
     @Autowired
     private IMovieService MovieService;
 
+    @CircuitBreaker(name = "movieCB", fallbackMethod = "fallback")
     @GetMapping("/{genre}")
-
-    @CircuitBreaker(name="subscription",fallbackMethod = "subsciptionFallbackMethod")
-    @Retry(name = "subscription")
-    ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
+    public ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
           return ResponseEntity.ok().body(MovieService.getMovieByGenre(genre));
     }
 
-    private ResponseEntity<List<Movie>> subsciptionFallbackMethod(@PathVariable String genre) {
+    private ResponseEntity<List<Movie>> fallback(@PathVariable String genre) {
           return new ResponseEntity("Movies " + genre + "no existe", HttpStatus.OK);
     }
 
