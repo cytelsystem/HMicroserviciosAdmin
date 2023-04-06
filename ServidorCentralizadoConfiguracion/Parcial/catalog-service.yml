@@ -39,6 +39,8 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 15000
       permittedNumberOfCallsInHalfOpenState: 3
       automaticTransitionFromOpenToHalfOpenEnabled: true
+      eventConsumerBufferSize: 10
+      recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
 
 resilience4j.retry:
   instances:
