@@ -12,7 +12,7 @@ spring:
       default-filters:
         - name: FilterCustom
       routes:
-        - id: cataloggenre
+        - id: catalogoService
           uri: lb://catalog-service
           predicates:
             - Path=/catalog/**
@@ -22,14 +22,14 @@ spring:
         - id: movieService
           uri: lb://movie-service
           predicates:
-            - Path=/catalog/**
+            - Path=/movies/**
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-respons-header, custom-user-response-header
         - id: serieService
           uri: lb://serie-service
           predicates:
-            - Path=/catalog/**
+            - Path=/series/**
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-respons-header, custom-user-response-header
