@@ -19,6 +19,20 @@ spring:
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-respons-header, custom-user-response-header
+        - id: movieService
+          uri: lb://movie-service
+          predicates:
+            - Path=/catalog/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-respons-header, custom-user-response-header
+        - id: serieService
+          uri: lb://serie-service
+          predicates:
+            - Path=/catalog/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-respons-header, custom-user-response-header
 
 info:
   app:
