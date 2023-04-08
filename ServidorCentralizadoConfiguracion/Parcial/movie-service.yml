@@ -38,9 +38,9 @@ spring:
       type: rabbit
     enabled: true
 queue:
-  moviecatalogo:
-    name: moviecatalogQueue
-message: moviecatalogo up
+  movie:
+    name: movieQueue
+message: movieQueue up
 
 management:
   endpoints:
