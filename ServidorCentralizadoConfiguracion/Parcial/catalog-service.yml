@@ -33,6 +33,8 @@ spring:
 queue:
   serie:
     name: serieQueue
+  movie:
+    name: movieQueue
 message: serieQueue up
 
 management:
