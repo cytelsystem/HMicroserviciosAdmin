@@ -2,6 +2,7 @@ package com.dh.catalogservice.queue;
 
 import com.dh.catalogservice.model.LocalMovieDTO;
 import com.dh.catalogservice.model.MovieFeinDTO;
+import com.dh.catalogservice.model.MovieMongoDTO;
 import com.dh.catalogservice.model.SerieFeinDTO;
 import com.dh.catalogservice.service.ServiceMovie;
 import com.dh.catalogservice.service.ServiceSerie;
@@ -21,9 +22,9 @@ public class MovieListener {
     }
 
     @RabbitListener(queues = {"${queue.movie.name}"})
-    public void receive(@Payload LocalMovieDTO movie) {
+    public void receive(@Payload MovieMongoDTO movie) {
         System.out.println("SI LLEGA EL MENSAJE DE MOVIE: " + movie);
-//        ServiceMovie.saveMovies(movie);
+        ServiceMovie.saveMovies(movie);
     }
 
 }

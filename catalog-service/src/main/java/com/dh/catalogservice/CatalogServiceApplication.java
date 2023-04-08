@@ -1,5 +1,6 @@
 package com.dh.catalogservice;
 
+import com.dh.catalogservice.model.MovieMongoDTO;
 import com.dh.catalogservice.repository.LocalRepositorySeries;
 import com.dh.catalogservice.repository.LocalRepositoryMovies;
 import com.dh.catalogservice.model.LocalMovieDTO;
@@ -80,15 +81,15 @@ public class CatalogServiceApplication {
     public CommandLineRunner loadDataMovieCatalogo(LocalRepositoryMovies repositoryMovies) {
 
         return (args) -> {
-            repositoryMovies.save(new LocalMovieDTO(1L, "filme", "terror", "what"));
-            repositoryMovies.save(new LocalMovieDTO(2L, "borboleta", "terror", "what"));
-            repositoryMovies.save(new LocalMovieDTO(3L, "adedonha", "terror", "what"));
-            repositoryMovies.save(new LocalMovieDTO(4L, "pajero", "terror", "what"));
-            repositoryMovies.save(new LocalMovieDTO(5L, "dakar", "acao", "what"));
-            repositoryMovies.save(new LocalMovieDTO(6L, "shadow", "acao", "what"));
-            repositoryMovies.save(new LocalMovieDTO(7L, "boné", "romance", "what"));
-            repositoryMovies.save(new LocalMovieDTO(8L, "xícara", "romance", "what"));
-            repositoryMovies.save(new LocalMovieDTO(9L, "Black Adam", "Accion", "what"));
+            repositoryMovies.save(new MovieMongoDTO("1", "filme", "terror", "what"));
+            repositoryMovies.save(new MovieMongoDTO("2", "borboleta", "terror", "what"));
+            repositoryMovies.save(new MovieMongoDTO("3", "adedonha", "terror", "what"));
+            repositoryMovies.save(new MovieMongoDTO("4", "pajero", "terror", "what"));
+            repositoryMovies.save(new MovieMongoDTO("5", "dakar", "acao", "what"));
+            repositoryMovies.save(new MovieMongoDTO("6", "shadow", "acao", "what"));
+            repositoryMovies.save(new MovieMongoDTO("7", "boné", "romance", "what"));
+            repositoryMovies.save(new MovieMongoDTO("8", "xícara", "romance", "what"));
+            repositoryMovies.save(new MovieMongoDTO("9", "Black Adam", "Accion", "what"));
 
 
         };

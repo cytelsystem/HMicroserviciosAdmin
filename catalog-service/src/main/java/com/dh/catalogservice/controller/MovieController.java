@@ -1,6 +1,7 @@
 package com.dh.catalogservice.controller;
 
 import com.dh.catalogservice.clienteFein.InterfaceMovieFein;
+import com.dh.catalogservice.model.MovieMongoDTO;
 import com.dh.catalogservice.model.SerieFeinDTO;
 import com.dh.catalogservice.queue.MovieListener;
 import com.dh.catalogservice.service.ServiceMovie;
@@ -35,7 +36,7 @@ public class MovieController {
     }
 
     @GetMapping("/local/{genre}")
-    public ResponseEntity<List<LocalMovieDTO>> getMovieByGenreCatalogo(@PathVariable String genre) {
+    public ResponseEntity<List<MovieMongoDTO>> getMovieByGenreCatalogo(@PathVariable String genre) {
         return ResponseEntity.ok().body(MovieService.buscarPorGenero(genre));
     }
 
@@ -51,10 +52,15 @@ public class MovieController {
 
 
     @PostMapping("/salvarMovie")
-    public ResponseEntity<LocalMovieDTO> guardarMovie(@RequestBody LocalMovieDTO movie) {
+    public ResponseEntity<MovieMongoDTO> guardarMovie(@RequestBody MovieMongoDTO movie) {
         MovieListener.receive(movie);
         return ResponseEntity.noContent().build();
     }
+//    @PostMapping("/salvarMovieprueba")
+//    public ResponseEntity<?> guardarMovieprueba(@RequestBody LocalMovieDTO movie) {
+//        MovieService.saveMovies(movie);
+//        return ResponseEntity.ok("salbo correctamente");
+//    }
 
 
 

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Movies")
@@ -12,9 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Setter
 @Getter
-public class LocalMovieDTO {
+public class MovieMongoDTO {
 
-    private Long id;
+    private String id;
     private String name;
     private String genre;
     private String urlStream;

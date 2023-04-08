@@ -1,6 +1,7 @@
 package com.dh.catalogservice.service;
 
 import com.dh.catalogservice.clienteFein.InterfaceMovieFein;
+import com.dh.catalogservice.model.MovieMongoDTO;
 import com.dh.catalogservice.model.SerieFeinDTO;
 import com.dh.catalogservice.repository.LocalRepositoryMovies;
 import com.dh.catalogservice.model.LocalMovieDTO;
@@ -24,7 +25,7 @@ public class ServiceMovie {
         LocalRepositoryMovies = localRepositoryMovies;
     }
 
-    public List<LocalMovieDTO> buscarPorGenero(String genre){
+    public List<MovieMongoDTO> buscarPorGenero(String genre){
 
         return LocalRepositoryMovies.findAllByGenre(genre);
     }
@@ -33,13 +34,14 @@ public class ServiceMovie {
 //        return InterfaceMovieFein.getMovieByGenre(genre);
 //    }
 
-    public List<LocalMovieDTO> getMovieFeinGenre(String genre) {
+    public List<MovieMongoDTO> getMovieFeinGenre(String genre) {
 
         return LocalRepositoryMovies.findAllByGenre(genre);
     }
 
-    //*********************************Guardar DB mongo Catalogo**********************************//
-    public LocalMovieDTO saveMovies(LocalMovieDTO movie) {
+
+    // *********************************Guardar DB mongo Catalogo**********************************//
+    public MovieMongoDTO saveMovies(MovieMongoDTO movie) {
 
         return LocalRepositoryMovies.save(movie);
     }
