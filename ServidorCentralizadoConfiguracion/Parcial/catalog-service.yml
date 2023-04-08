@@ -33,7 +33,7 @@ spring:
 queue:
   serie:
     name: serieQueue
-message: serie up
+message: serieQueue up
 
 management:
   endpoints:
