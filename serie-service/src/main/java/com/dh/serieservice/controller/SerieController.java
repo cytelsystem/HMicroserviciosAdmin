@@ -52,7 +52,8 @@ public class SerieController {
     @PostMapping("/salvar")
     public ResponseEntity<?> savePersona(@RequestBody Serie serie) {
         SerieSender.send(serie);
-        return ResponseEntity.noContent().build();
+        servicedatos.create(serie);
+        return ResponseEntity.ok("Su registro se esta procesando");
     }
 
 
