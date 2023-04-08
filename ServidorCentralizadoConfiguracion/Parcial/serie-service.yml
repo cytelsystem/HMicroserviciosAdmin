@@ -30,9 +30,9 @@ spring:
       type: rabbit
     enabled: true
 queue:
-  seriecatalogo:
-    name: seriecatalogQueue
-message: seriecatalogo up
+  serie:
+    name: serieQueue
+message: serieQueue up
 
 management:
   endpoints:

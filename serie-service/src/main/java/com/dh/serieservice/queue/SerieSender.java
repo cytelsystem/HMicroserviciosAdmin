@@ -12,10 +12,10 @@ public class SerieSender {
 
     private final RabbitTemplate rabbitTemplate;
 
-    private final Queue seriecatalogQueue;
+    private final Queue serieQueue;
 
     public void send(Serie serie) {
-        this.rabbitTemplate.convertAndSend(this.seriecatalogQueue.getName(), serie);
+        this.rabbitTemplate.convertAndSend(this.serieQueue.getName(), serie);
     }
 
 
