@@ -1,4 +1,4 @@
-package com.example.mspersona.core.config;
+package com.dh.serieservice.config;
 
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

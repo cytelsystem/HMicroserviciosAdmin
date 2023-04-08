@@ -1,4 +1,4 @@
-package com.example.msregistro.core.config;
+package com.dh.serieservice.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
