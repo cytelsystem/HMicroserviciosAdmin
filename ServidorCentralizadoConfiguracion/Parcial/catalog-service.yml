@@ -31,9 +31,9 @@ spring:
     enabled: true
 
 queue:
-  moviecatalogo:
-    name: moviecatalogQueue
-message: registro up
+  serie:
+    name: serieQueue
+message: serie up
 
 management:
   endpoints:
