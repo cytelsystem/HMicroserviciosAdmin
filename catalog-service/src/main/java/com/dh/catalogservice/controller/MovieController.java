@@ -2,7 +2,7 @@ package com.dh.catalogservice.controller;
 
 import com.dh.catalogservice.clienteFein.InterfaceMovieFein;
 import com.dh.catalogservice.model.SerieFeinDTO;
-import com.dh.catalogservice.queue.SerieListener;
+import com.dh.catalogservice.queue.MovieListener;
 import com.dh.catalogservice.service.ServiceMovie;
 import com.dh.catalogservice.model.MovieFeinDTO;
 import com.dh.catalogservice.model.LocalMovieDTO;
@@ -22,6 +22,9 @@ public class MovieController {
     private InterfaceMovieFein IMovieServiceFein;
     @Autowired
     private ServiceMovie MovieService;
+
+    @Autowired
+    private MovieListener listener;
 
 
 
@@ -45,6 +48,14 @@ public class MovieController {
     public ResponseEntity<List<MovieFeinDTO>> getMovieFeinGenre(@PathVariable String genre) {
         return (ResponseEntity<List<MovieFeinDTO>>) MovieService.getMovieFeinGenre(genre);
     }
+
+
+    @PostMapping("/salvarMovie")
+    public ResponseEntity<LocalMovieDTO> guardarMovie(@RequestBody LocalMovieDTO movie) {
+        listener.receive(movie);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 

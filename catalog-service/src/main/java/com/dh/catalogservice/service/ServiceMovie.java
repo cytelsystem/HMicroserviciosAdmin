@@ -1,10 +1,12 @@
 package com.dh.catalogservice.service;
 
 import com.dh.catalogservice.clienteFein.InterfaceMovieFein;
+import com.dh.catalogservice.model.SerieFeinDTO;
 import com.dh.catalogservice.repository.LocalRepositoryMovies;
 import com.dh.catalogservice.model.LocalMovieDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,6 +40,12 @@ public class ServiceMovie {
         return LocalRepositoryMovies.findAllByGenre(genre);
     }
 
+    //*********************************Guardar DB mongo Catalogo**********************************//
+    public LocalMovieDTO save(LocalMovieDTO movie) {
+
+        return LocalRepositoryMovies.save(movie);
+    }
+    //*********************************************************************************************//
 
 
 }
