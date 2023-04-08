@@ -22,8 +22,8 @@ public class MovieListener {
 
     @RabbitListener(queues = {"${queue.movie.name}"})
     public void receive(@Payload LocalMovieDTO movie) {
-        System.out.println("SI LLEGA EL MENSAJE DE SERIE: " + movie);
-        ServiceMovie.save(movie);
+        System.out.println("SI LLEGA EL MENSAJE DE MOVIE: " + movie);
+//        ServiceMovie.saveMovies(movie);
     }
 
 }

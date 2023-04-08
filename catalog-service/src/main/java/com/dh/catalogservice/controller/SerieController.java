@@ -38,11 +38,11 @@ public class SerieController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/salvar")
-    public ResponseEntity<SerieFeinDTO> guardarSerie(@RequestBody SerieFeinDTO serie) {
-        listener.receive(serie);
-        return ResponseEntity.noContent().build();
-    }
+//    @PostMapping("/salvar")
+//    public ResponseEntity<SerieFeinDTO> guardarSerie(@RequestBody SerieFeinDTO serie) {
+//        listener.receive(serie);
+//        return ResponseEntity.noContent().build();
+//    }
 
 
 }

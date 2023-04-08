@@ -16,8 +16,6 @@ import java.util.List;
 @Service
 public class ServiceMovie {
     @Autowired
-    private LocalRepositoryMovies CatalogRepositoryMovies;
-    @Autowired
     private InterfaceMovieFein InterfaceMovieFein;
     @Autowired
     private LocalRepositoryMovies LocalRepositoryMovies;
@@ -28,7 +26,7 @@ public class ServiceMovie {
 
     public List<LocalMovieDTO> buscarPorGenero(String genre){
 
-        return CatalogRepositoryMovies.findAllByGenre(genre);
+        return LocalRepositoryMovies.findAllByGenre(genre);
     }
 
 //    public List<MovieFeinDTO> getMovieFeinGenre(String genre) {
@@ -41,7 +39,7 @@ public class ServiceMovie {
     }
 
     //*********************************Guardar DB mongo Catalogo**********************************//
-    public LocalMovieDTO save(LocalMovieDTO movie) {
+    public LocalMovieDTO saveMovies(LocalMovieDTO movie) {
 
         return LocalRepositoryMovies.save(movie);
     }

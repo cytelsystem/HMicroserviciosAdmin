@@ -24,7 +24,7 @@ public class MovieController {
     private ServiceMovie MovieService;
 
     @Autowired
-    private MovieListener listener;
+    private MovieListener MovieListener;
 
 
 
@@ -52,7 +52,7 @@ public class MovieController {
 
     @PostMapping("/salvarMovie")
     public ResponseEntity<LocalMovieDTO> guardarMovie(@RequestBody LocalMovieDTO movie) {
-        listener.receive(movie);
+        MovieListener.receive(movie);
         return ResponseEntity.noContent().build();
     }
 

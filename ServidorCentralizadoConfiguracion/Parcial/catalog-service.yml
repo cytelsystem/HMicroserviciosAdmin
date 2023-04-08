@@ -30,14 +30,9 @@ spring:
       type: rabbit
     enabled: true
 
-#queue:
-#  serie:
-#    name: serieQueue
-#  movie:
-#    name: movieQueue
-#message: serieQueue up
-
 queue:
+  serie:
+    name: serieQueue
   movie:
     name: movieQueue
 message: serieQueue up
