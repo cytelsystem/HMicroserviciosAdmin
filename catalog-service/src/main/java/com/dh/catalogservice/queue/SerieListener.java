@@ -10,17 +10,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class SerieListener {
 
-//    @Autowired
-//    private ServiceSerie ServiceSerie;
-//
-//    public SerieListener(com.dh.catalogservice.service.ServiceSerie serviceSerie) {
-//        ServiceSerie = serviceSerie;
-//    }
-//
-//    @RabbitListener(queues = {"${queue.serie.name}"})
-//    public void receive(@Payload SerieFeinDTO serie) {
-//        System.out.println("SI LLEGA EL MENSAJE DE SERIE: " + serie);
-//        ServiceSerie.save(serie);
-//    }
+    @Autowired
+    private ServiceSerie ServiceSerie;
+
+    public SerieListener(com.dh.catalogservice.service.ServiceSerie serviceSerie) {
+        ServiceSerie = serviceSerie;
+    }
+
+    @RabbitListener(queues = {"${queue.serie.name}"})
+    public void receive(@Payload SerieFeinDTO serie) {
+        System.out.println("SI LLEGA EL MENSAJE DE SERIE: " + serie);
+        ServiceSerie.save(serie);
+    }
 
 }
