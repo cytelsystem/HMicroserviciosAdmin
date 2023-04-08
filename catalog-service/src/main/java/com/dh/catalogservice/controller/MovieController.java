@@ -1,6 +1,8 @@
 package com.dh.catalogservice.controller;
 
 import com.dh.catalogservice.clienteFein.InterfaceMovieFein;
+import com.dh.catalogservice.model.SerieFeinDTO;
+import com.dh.catalogservice.queue.SerieListener;
 import com.dh.catalogservice.service.ServiceMovie;
 import com.dh.catalogservice.model.MovieFeinDTO;
 import com.dh.catalogservice.model.LocalMovieDTO;
@@ -20,6 +22,8 @@ public class MovieController {
     private InterfaceMovieFein IMovieServiceFein;
     @Autowired
     private ServiceMovie MovieService;
+
+
 
     @CircuitBreaker(name="movieCB",fallbackMethod = "fallback")
     @GetMapping("/{genre}")
