@@ -34,13 +34,16 @@ public class MovieController {
 
     @PostMapping("/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+
         return ResponseEntity.ok().body(service.save(movie));
     }
+
 
     @PostMapping("/salvar")
     public ResponseEntity<?> savePersona(@RequestBody Movie movie) {
         MovieSender.send(movie);
-        return ResponseEntity.noContent().build();
+        service.save(movie);
+        return ResponseEntity.ok("Su registro se esta procesando");
     }
 
 
