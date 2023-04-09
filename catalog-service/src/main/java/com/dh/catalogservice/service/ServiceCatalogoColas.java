@@ -2,7 +2,7 @@ package com.dh.catalogservice.service;
 
 
 import com.dh.catalogservice.model.MovieFeinDTO;
-import com.dh.catalogservice.model.SerieFeinDTO;
+import com.dh.catalogservice.model.SerieDTO;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -35,13 +35,13 @@ public class ServiceCatalogoColas implements ICatalogService {
     }
 
 
-    public List<SerieFeinDTO> getSerieByGenre(String genre) {
+    public List<SerieDTO> getSerieByGenre(String genre) {
 
         var url = String.format("http://localhost:8001/series/%s", genre);
 
         var response = clienteRest.exchange(url, HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<SerieFeinDTO>>() {
+                new ParameterizedTypeReference<List<SerieDTO>>() {
                 });
 
         return Objects.requireNonNull(response.getBody());

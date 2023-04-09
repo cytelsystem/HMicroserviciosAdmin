@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.dh.catalogservice.model.SerieFeinDTO;
+import com.dh.catalogservice.model.SerieDTO;
 
 import java.util.List;
 
@@ -22,6 +22,6 @@ public interface InterfaceSerieFein {
     String getdatos(@RequestParam String nombre, @RequestParam String apellido);
 
     @GetMapping("/series/{genre}")
-    List<SerieFeinDTO> getSerieByGenre(@PathVariable String genre);
+    List<SerieDTO> getSerieByGenre(@PathVariable String genre);
 
 }

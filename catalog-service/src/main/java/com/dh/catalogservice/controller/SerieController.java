@@ -6,7 +6,7 @@ import com.dh.catalogservice.service.ServiceSerie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.dh.catalogservice.model.SerieFeinDTO;
+import com.dh.catalogservice.model.SerieDTO;
 
 import java.util.List;
 
@@ -18,31 +18,28 @@ public class SerieController {
     private InterfaceSerieFein interfaceSerie;
 
     @Autowired
-    private SerieListener listener;
+    private SerieListener SerieListener;
 
     @Autowired
     private ServiceSerie ServiceSerie;
 
-
+    //*****************************************************************************************************//
 
     @GetMapping("/series/{genre}")
-    public List<SerieFeinDTO> getSerieByGenre(@PathVariable String genre) {
+    public List<SerieDTO> getSerieByGenre(@PathVariable String genre) {
 
         return interfaceSerie.getSerieByGenre(genre);
     }
 
-
-    @PostMapping("/salvarSerie")
-    public ResponseEntity<SerieFeinDTO> guardarSeriedb(@RequestBody SerieFeinDTO serie) {
-        ServiceSerie.save(serie);
-        return ResponseEntity.noContent().build();
-    }
+    //*************************************Guardar mensajes Rabbi******************************************//
 
     @PostMapping("/salvar")
-    public ResponseEntity<SerieFeinDTO> guardarSerie(@RequestBody SerieFeinDTO serie) {
-        listener.receive(serie);
+    public ResponseEntity<SerieDTO> guardarSerie(@RequestBody SerieDTO serie) {
+        SerieListener.receive(serie);
         return ResponseEntity.noContent().build();
     }
+
+    //**********************************************************************************************//
 
 
 }

@@ -1,6 +1,6 @@
 package com.dh.catalogservice.queue;
 
-import com.dh.catalogservice.model.SerieFeinDTO;
+import com.dh.catalogservice.model.SerieDTO;
 import com.dh.catalogservice.service.ServiceSerie;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class SerieListener {
     }
 
     @RabbitListener(queues = {"${queue.serie.name}"})
-    public void receive(@Payload SerieFeinDTO serie) {
+    public void receive(@Payload SerieDTO serie) {
         System.out.println("SI LLEGA EL MENSAJE DE SERIE: " + serie);
         ServiceSerie.save(serie);
     }

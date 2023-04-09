@@ -1,10 +1,9 @@
 package com.dh.catalogservice;
 
 import com.dh.catalogservice.model.MovieMongoDTO;
+import com.dh.catalogservice.model.SerieDTO;
 import com.dh.catalogservice.repository.LocalRepositorySeries;
 import com.dh.catalogservice.repository.LocalRepositoryMovies;
-import com.dh.catalogservice.model.LocalMovieDTO;
-import com.dh.catalogservice.model.SerieFeinDTO;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,39 +35,39 @@ public class CatalogServiceApplication {
             }
 
             //Serie A terror
-            List<SerieFeinDTO.Season.Chapter> serieASeasonAChapters = List.of(
-                    new SerieFeinDTO.Season.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/1/chapter/1"),
-                    new SerieFeinDTO.Season.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/1/chapter/2")
+            List<SerieDTO.Season.Chapter> serieASeasonAChapters = List.of(
+                    new SerieDTO.Season.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/1/chapter/1"),
+                    new SerieDTO.Season.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/1/chapter/2")
             );
 
-            List<SerieFeinDTO.Season.Chapter> serieASeasonBChapters = List.of(
-                    new SerieFeinDTO.Season.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/2/chapter/1"),
-                    new SerieFeinDTO.Season.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/2/chapter/2")
+            List<SerieDTO.Season.Chapter> serieASeasonBChapters = List.of(
+                    new SerieDTO.Season.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/2/chapter/1"),
+                    new SerieDTO.Season.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/2/chapter/2")
             );
 
-            List<SerieFeinDTO.Season> serieASeasons = List.of(
-                    new SerieFeinDTO.Season(1, serieASeasonAChapters),
-                    new SerieFeinDTO.Season(2, serieASeasonBChapters)
+            List<SerieDTO.Season> serieASeasons = List.of(
+                    new SerieDTO.Season(1, serieASeasonAChapters),
+                    new SerieDTO.Season(2, serieASeasonBChapters)
             );
 
             //Serie B comedia
-            List<SerieFeinDTO.Season.Chapter> serieBSeasonAChapters = List.of(
-                    new SerieFeinDTO.Season.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/1/chapter/1"),
-                    new SerieFeinDTO.Season.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/1/chapter/2")
+            List<SerieDTO.Season.Chapter> serieBSeasonAChapters = List.of(
+                    new SerieDTO.Season.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/1/chapter/1"),
+                    new SerieDTO.Season.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/1/chapter/2")
             );
 
-            List<SerieFeinDTO.Season.Chapter> serieBSeasonBChapters = List.of(
-                    new SerieFeinDTO.Season.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/2/chapter/1"),
-                    new SerieFeinDTO.Season.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/2/chapter/2")
+            List<SerieDTO.Season.Chapter> serieBSeasonBChapters = List.of(
+                    new SerieDTO.Season.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/2/chapter/1"),
+                    new SerieDTO.Season.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/2/chapter/2")
             );
 
-            List<SerieFeinDTO.Season> serieBSeasons = List.of(
-                    new SerieFeinDTO.Season(1, serieBSeasonAChapters),
-                    new SerieFeinDTO.Season(2, serieBSeasonBChapters)
+            List<SerieDTO.Season> serieBSeasons = List.of(
+                    new SerieDTO.Season(1, serieBSeasonAChapters),
+                    new SerieDTO.Season(2, serieBSeasonBChapters)
             );
 
-            SerieFeinDTO serieA = new SerieFeinDTO(UUID.randomUUID().toString(),"Serie A", "terror", serieASeasons);
-            SerieFeinDTO serieB = new SerieFeinDTO(UUID.randomUUID().toString(),"Serie B", "comedia", serieBSeasons);
+            SerieDTO serieA = new SerieDTO(UUID.randomUUID().toString(),"Serie A", "terror", serieASeasons);
+            SerieDTO serieB = new SerieDTO(UUID.randomUUID().toString(),"Serie B", "comedia", serieBSeasons);
             repository.save(serieA);
             repository.save(serieB);
 

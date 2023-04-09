@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-public class SerieFeinDTO {
+public class SerieDTO {
 
     private String id;
     private String name;
@@ -45,4 +45,6 @@ public class SerieFeinDTO {
         }
 
     }
+
+
 }

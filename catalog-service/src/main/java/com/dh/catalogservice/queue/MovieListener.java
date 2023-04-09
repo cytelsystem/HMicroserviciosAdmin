@@ -1,11 +1,7 @@
 package com.dh.catalogservice.queue;
 
-import com.dh.catalogservice.model.LocalMovieDTO;
-import com.dh.catalogservice.model.MovieFeinDTO;
 import com.dh.catalogservice.model.MovieMongoDTO;
-import com.dh.catalogservice.model.SerieFeinDTO;
 import com.dh.catalogservice.service.ServiceMovie;
-import com.dh.catalogservice.service.ServiceSerie;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;

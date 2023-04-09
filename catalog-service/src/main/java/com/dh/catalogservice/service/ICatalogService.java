@@ -1,12 +1,12 @@
 package com.dh.catalogservice.service;
 
 import com.dh.catalogservice.model.MovieFeinDTO;
-import com.dh.catalogservice.model.SerieFeinDTO;
+import com.dh.catalogservice.model.SerieDTO;
 
 import java.util.List;
 
 public interface ICatalogService {
-    List<SerieFeinDTO> getSerieByGenre (String genre);
+    List<SerieDTO> getSerieByGenre (String genre);
     List<MovieFeinDTO> getMovieByGenre (String genre);
 
 }
