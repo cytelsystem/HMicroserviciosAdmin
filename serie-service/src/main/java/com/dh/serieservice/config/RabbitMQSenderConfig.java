@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQSenderConfig {
 
     @Value("${queue.serie.name}")
-    private String serieQueue;
+    private String NewSerie;
 
 
     @Bean
     public Queue queue() {
-        return new Queue(this.serieQueue, true);
+        return new Queue(this.NewSerie, true);
     }
 
 }

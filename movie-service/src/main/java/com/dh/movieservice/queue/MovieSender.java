@@ -12,10 +12,10 @@ public class MovieSender {
 
     private final RabbitTemplate rabbitTemplate;
 
-    private final Queue movieQueue;
+    private final Queue NewMovie;
 
     public void send(Movie movie) {
-        this.rabbitTemplate.convertAndSend(this.movieQueue.getName(), movie);
+        this.rabbitTemplate.convertAndSend(this.NewMovie.getName(), movie);
     }
 
 

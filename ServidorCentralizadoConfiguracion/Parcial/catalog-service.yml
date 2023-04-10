@@ -32,9 +32,9 @@ spring:
 
 queue:
   serie:
-    name: serieQueue
+    name: NewSerie
   movie:
-    name: movieQueue
+    name: NewMovie
 message: serieQueue up
 
 management:

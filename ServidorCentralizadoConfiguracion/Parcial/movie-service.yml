@@ -39,7 +39,7 @@ spring:
     enabled: true
 queue:
   movie:
-    name: movieQueue
+    name: NewMovie
 message: movieQueue up
 
 management:
