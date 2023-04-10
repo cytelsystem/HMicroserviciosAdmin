@@ -81,7 +81,7 @@ resilience4j.retry:
         - java.io.IOException
         - feign.FeignException.InternalServerError
       ignoreExceptions:
-        - io.github.robwin.exception.BusinessException
+#        - io.github.robwin.exception.BusinessException
   instances:
     movieCB:
       baseConfig: default
