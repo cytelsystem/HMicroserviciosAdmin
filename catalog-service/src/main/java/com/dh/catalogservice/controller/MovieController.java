@@ -24,42 +24,23 @@ public class MovieController {
     @Autowired
     private MovieListener MovieListener;
 
-    //**************************************CircuitBreacker******************************************//
 
-//    @CircuitBreaker(name="movieCB",fallbackMethod = "fallback")
-//    @GetMapping("/circuitbreacker/{genre}")
-//    public ResponseEntity<List<MovieFeinDTO>> getMovieByGenre(@PathVariable String genre) {
-//          return ResponseEntity.ok().body(IMovieServiceFein.getMovieByGenre(genre));
-//    }
-
-
-//    private ResponseEntity<List<MovieFeinDTO>> fallback(@PathVariable String genre, RuntimeException e) {
-//          return new ResponseEntity("Base de datos no funciona", HttpStatus.OK);
-//    }
-
-    //*********************************************************************************************************//
-
-//    @GetMapping("/genreFein/{genre}")
-//    public ResponseEntity<List<MovieFeinDTO>> getMovieFeinGenre(@PathVariable String genre) {
-//        return (ResponseEntity<List<MovieFeinDTO>>) MovieService.getMovieFeinGenre(genre);
-//    }
-
-    //*************************************Guardar mensajes Rabbi******************************************//
+    //*************************************Guardar el mensaje que viene de la cola(Rabbi)*****************//
     @PostMapping("/salvarMovie")
     public ResponseEntity<MovieMongoDTO> guardarMovie(@RequestBody MovieMongoDTO movie) {
         MovieListener.receive(movie);
         return ResponseEntity.noContent().build();
     }
 
-    //*****************************************Metodo Fein*********************************************//
+    //*****************************************Metodo Fein***********************************************//
     @GetMapping(value = "/fein/{genre}")
-    public ResponseEntity<List<MovieFeinDTO>> getFeinMovieByGenre(@PathVariable String genre) {
+    public ResponseEntity<List<MovieMongoDTO>> getFeinMovieByGenre(@PathVariable String genre) {
         return ResponseEntity.ok().body(MovieService.FeinBuscarPorGeneroMovie(genre));
     }
-    //******************************************************************************************************//
+    //********************************************Metodo CircuitBreacker***********************************//
 
     @GetMapping("/circuitbreacker/{genre}")
-    public ResponseEntity<List<MovieFeinDTO>> getCircuitBreackerMovieByGenre(@PathVariable String genre, @RequestParam(defaultValue = "false") Boolean throwError, HttpServletResponse response) {
+    public ResponseEntity<List<MovieMongoDTO>> getCircuitBreackerMovieByGenre(@PathVariable String genre, @RequestParam(defaultValue = "false") Boolean throwError, HttpServletResponse response) {
         return ResponseEntity.ok().body(MovieService.CBBuscarPorGeneroMovie(genre,throwError));
     }
 

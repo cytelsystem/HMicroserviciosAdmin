@@ -24,9 +24,9 @@ public class CircuitBreackerRepository {
     }
 
     @CircuitBreaker(name="movieCB",fallbackMethod = "fallback")
-    public List<MovieFeinDTO> findByMovieGenre(String genre) {
+    public List<MovieMongoDTO> findByMovieGenre(String genre) {
         System.out.println("Ejecutando...");
-        List<MovieFeinDTO> response = InterfaceMovieFein.getMovieByGenre(genre);
+        List<MovieMongoDTO> response = InterfaceMovieFein.getMovieByGenre(genre);
         return response;
     }
 
@@ -36,7 +36,7 @@ public class CircuitBreackerRepository {
 //    }
 //
     public List<MovieMongoDTO> fallback(String genre, CallNotPermittedException exception) {
-
+        System.out.println("Ejecutando...CircuitBreacker Base Datos Mongo Movies");
         List<MovieMongoDTO> alternativa = LocalRepositoryMovies.findAllByGenre(genre);
         return alternativa;
 

@@ -3,6 +3,7 @@ package com.dh.catalogservice.clienteFein;
 
 import com.dh.catalogservice.configuration.CustomLoadBalancerConfiguration;
 import com.dh.catalogservice.model.MovieFeinDTO;
+import com.dh.catalogservice.model.MovieMongoDTO;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public interface InterfaceMovieFein {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/movies/{genre}")
-    List<MovieFeinDTO> getMovieByGenre(@PathVariable String genre);
+    List<MovieMongoDTO> getMovieByGenre(@PathVariable String genre);
 
 
 }

@@ -43,13 +43,13 @@ public class ServiceMovie {
 
     //***********************************Metodo Fein******************************************//
 
-    public List<MovieFeinDTO> FeinBuscarPorGeneroMovie(String genre) {
+    public List<MovieMongoDTO> FeinBuscarPorGeneroMovie(String genre) {
         return InterfaceMovieFein.getMovieByGenre(genre);
     }
 
     //***********************************Metodo CircuitBreacker******************************************//
 
-    public List<MovieFeinDTO> CBBuscarPorGeneroMovie(String genre, Boolean throwError) throws RuntimeException{
+    public List<MovieMongoDTO> CBBuscarPorGeneroMovie(String genre, Boolean throwError) throws RuntimeException{
         if(throwError)
             throw new RuntimeException();
         return CircuitBreackerRepository.findByMovieGenre(genre);
