@@ -71,17 +71,14 @@ resilience4j.circuitbreaker:
       failureRateThreshold: 50
       eventConsumerBufferSize: 10
 resilience4j.retry:
-  configs:
-    default:
-      maxAttempts: 3
-      waitDuration: 100
-      retryExceptions:
-        - org.springframework.web.client.HttpServerErrorException
-        - java.util.concurrent.TimeoutException
-        - java.io.IOException
-        - feign.FeignException.InternalServerError
-      ignoreExceptions:
-#        - io.github.robwin.exception.BusinessException
   instances:
     movieCB:
-      baseConfig: default
+      maxAttempts: 3
+      waitDuration: 10s
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.io.IOException
+        - feign.FeignException.InternalServerError
+

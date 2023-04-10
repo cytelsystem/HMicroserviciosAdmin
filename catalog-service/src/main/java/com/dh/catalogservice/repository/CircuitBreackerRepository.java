@@ -25,7 +25,7 @@ public class CircuitBreackerRepository {
     }
 
     @CircuitBreaker(name="movieCB",fallbackMethod = "fallback")
-    @Retry(name = "subscription")
+    @Retry(name = "movieCB")
     public List<MovieMongoDTO> findByMovieGenre(String genre) {
         System.out.println("Ejecutando...");
         List<MovieMongoDTO> response = InterfaceMovieFein.getMovieByGenre(genre);
