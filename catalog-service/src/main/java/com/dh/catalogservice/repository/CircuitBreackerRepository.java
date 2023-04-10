@@ -5,6 +5,7 @@ import com.dh.catalogservice.model.MovieFeinDTO;
 import com.dh.catalogservice.model.MovieMongoDTO;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -24,6 +25,7 @@ public class CircuitBreackerRepository {
     }
 
     @CircuitBreaker(name="movieCB",fallbackMethod = "fallback")
+    @Retry(name = "subscription")
     public List<MovieMongoDTO> findByMovieGenre(String genre) {
         System.out.println("Ejecutando...");
         List<MovieMongoDTO> response = InterfaceMovieFein.getMovieByGenre(genre);

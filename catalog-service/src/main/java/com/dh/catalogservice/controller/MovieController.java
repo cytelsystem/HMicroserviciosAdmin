@@ -33,13 +33,13 @@ public class MovieController {
     }
 
     //*****************************************Metodo Fein***********************************************//
-    @GetMapping(value = "/fein/{genre}")
-    public ResponseEntity<List<MovieMongoDTO>> getFeinMovieByGenre(@PathVariable String genre) {
-        return ResponseEntity.ok().body(MovieService.FeinBuscarPorGeneroMovie(genre));
-    }
+//    @GetMapping(value = "/fein/{genre}")
+//    public ResponseEntity<List<MovieMongoDTO>> getFeinMovieByGenre(@PathVariable String genre) {
+//        return ResponseEntity.ok().body(MovieService.FeinBuscarPorGeneroMovie(genre));
+//    }
     //********************************************Metodo CircuitBreacker***********************************//
 
-    @GetMapping("/circuitbreacker/{genre}")
+    @GetMapping("/movies/{genre}")
     public ResponseEntity<List<MovieMongoDTO>> getCircuitBreackerMovieByGenre(@PathVariable String genre, @RequestParam(defaultValue = "false") Boolean throwError, HttpServletResponse response) {
         return ResponseEntity.ok().body(MovieService.CBBuscarPorGeneroMovie(genre,throwError));
     }
