@@ -15,12 +15,6 @@ import java.util.List;
 @FeignClient("serie-service")
 @LoadBalancerClient(name = "serie-service", configuration = CustomLoadBalancerConfiguration.class )
 public interface InterfaceSerieFein {
-    @GetMapping("/series/saludarserie")
-    String getSaludar();
-
-    @GetMapping("/series/datos")
-    String getdatos(@RequestParam String nombre, @RequestParam String apellido);
-
     @GetMapping("/series/{genre}")
     List<SerieDTO> getSerieByGenre(@PathVariable String genre);
 
