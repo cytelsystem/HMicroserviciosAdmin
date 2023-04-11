@@ -1,6 +1,6 @@
 server:
-#  port: ${PORT:${SERVER_PORT:0}}
-  port: ${PORT:50786}
+  port: ${PORT:${SERVER_PORT:0}}
+#  port: ${PORT:50786}
 
 idRandom: ${random.value}
 
