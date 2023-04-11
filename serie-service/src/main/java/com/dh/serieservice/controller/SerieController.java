@@ -21,14 +21,38 @@ public class SerieController {
     private SerieSender SerieSender;
 
 
+    //*****************************Constructor**********************************//
+
+
     public SerieController(SerieService serieService) {
         this.servicedatos = serieService;
     }
 
-    @GetMapping
-    public List<Serie> getAll() {
-        return servicedatos.getAll();
-    }
+    //*******************************Lista all **************************************//
+
+//    @GetMapping
+//    public List<Serie> getAll() {
+//        return servicedatos.getAll();
+//    }
+
+
+
+    //*******************************Guarda en la base de datos Movies Mysql********************//
+
+//    @PostMapping("/save")
+//    ResponseEntity<?> saveSerie(@RequestBody Serie serie) {
+//        return ResponseEntity.ok().body(servicedatos.create(serie));
+//    }
+
+    //*******************************Estaba con el template*****************************//
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public String create(@RequestBody Serie serie) {
+//        servicedatos.create(serie);
+//        return serie.getId();
+//    }
+
+    //*******************************Lista las series por genero*****************************//
 
     @GetMapping("/{genre}")
     public List<Serie> getSerieByGenre(@PathVariable String genre) {
@@ -36,18 +60,7 @@ public class SerieController {
         return servicedatos.getSeriesBygGenre(genre);
     }
 
-    @PostMapping("/save")
-    ResponseEntity<?> saveSerie(@RequestBody Serie serie) {
-        return ResponseEntity.ok().body(servicedatos.create(serie));
-    }
-
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public String create(@RequestBody Serie serie) {
-        servicedatos.create(serie);
-        return serie.getId();
-    }
+    //*********************Guarda Registro local y envia mensaje a la cola de RabbiMQ*********//
 
     @PostMapping("/salvar")
     public ResponseEntity<?> savePersona(@RequestBody Serie serie) {
@@ -55,6 +68,8 @@ public class SerieController {
         servicedatos.create(serie);
         return ResponseEntity.ok("Su registro se esta procesando");
     }
+
+    //**************************************************************************************//
 
 
 }
