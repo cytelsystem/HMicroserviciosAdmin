@@ -23,28 +23,33 @@ public class MovieController {
     @Autowired
     private MovieSender MovieSender;
 
+    //**********************************Constructor******************************************//
+
     public MovieController(MovieService service) {
         this.service = service;
     }
 
+
+    //***************************Guarda en la base de datos Movies Mongo Serie****************//
+//    @PostMapping("/save")
+//    ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+//
+//        return ResponseEntity.ok().body(service.save(movie));
+//    }
+
+    //*******************************Lista las Movies por genero*****************************//
     @GetMapping("/{genre}")
     ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
         return ResponseEntity.ok().body(service.findByGenre(genre));
     }
 
-    @PostMapping("/save")
-    ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
-
-        return ResponseEntity.ok().body(service.save(movie));
-    }
-
-
+    //*********************Guarda Registro local y envia mensaje a la cola de RabbiMQ*********//
     @PostMapping("/salvar")
     public ResponseEntity<?> savePersona(@RequestBody Movie movie) {
         MovieSender.send(movie);
         service.save(movie);
         return ResponseEntity.ok("Su registro se esta procesando");
     }
-
+    //**************************************************************************************//
 
 }
