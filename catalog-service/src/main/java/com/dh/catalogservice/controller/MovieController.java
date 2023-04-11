@@ -19,29 +19,29 @@ public class MovieController {
     @Autowired
     private InterfaceMovieFein IMovieServiceFein;
     @Autowired
-    private ServiceMovie MovieService;
+    private ServiceMovie ServiceMovie;
 
     @Autowired
     private MovieListener MovieListener;
 
 
-    //*************************************Guardar el mensaje que viene de la cola(Rabbi)*****************//
+    //******************************Guardar el mensaje que viene de la cola(Rabbi)*************************//
     @PostMapping("/salvarMovie")
     public ResponseEntity<MovieMongoDTO> guardarMovie(@RequestBody MovieMongoDTO movie) {
         MovieListener.receive(movie);
         return ResponseEntity.noContent().build();
     }
 
-    //*****************************************Metodo Fein***********************************************//
-//    @GetMapping(value = "/fein/{genre}")
+    //**************************************Metodo Fein parcial consultar movies***************************//
+//    @GetMapping(value = "/feinMovies/{genre}")
 //    public ResponseEntity<List<MovieMongoDTO>> getFeinMovieByGenre(@PathVariable String genre) {
 //        return ResponseEntity.ok().body(MovieService.FeinBuscarPorGeneroMovie(genre));
 //    }
-    //********************************************Metodo CircuitBreacker***********************************//
+    //********************************************Metodo CircuitBreacker Movies******************************//
 
     @GetMapping("/movies/{genre}")
     public ResponseEntity<List<MovieMongoDTO>> getCircuitBreackerMovieByGenre(@PathVariable String genre, @RequestParam(defaultValue = "false") Boolean throwError, HttpServletResponse response) {
-        return ResponseEntity.ok().body(MovieService.CBBuscarPorGeneroMovie(genre,throwError));
+        return ResponseEntity.ok().body(ServiceMovie.CBBuscarPorGeneroMovie(genre,throwError));
     }
 
     //******************************************************************************************************//

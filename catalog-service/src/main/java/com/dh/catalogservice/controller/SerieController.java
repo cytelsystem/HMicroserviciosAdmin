@@ -15,32 +15,30 @@ import java.util.List;
 public class SerieController {
 
     @Autowired
-    private InterfaceSerieFein interfaceSerie;
-
-    @Autowired
     private SerieListener SerieListener;
 
     @Autowired
     private ServiceSerie ServiceSerie;
 
-    //*****************************************************************************************************//
+    //******************************Guardar el mensaje que viene de la cola(Rabbi)*************************//
 
-    @GetMapping("/series/{genre}")
-    public List<SerieDTO> getSerieByGenre(@PathVariable String genre) {
-
-        return interfaceSerie.getSerieByGenre(genre);
-    }
-
-    //*************************************Guardar mensajes Rabbi******************************************//
-
-    @PostMapping("/salvar")
+    @PostMapping("/salvarSerie")
     public ResponseEntity<SerieDTO> guardarSerie(@RequestBody SerieDTO serie) {
         SerieListener.receive(serie);
         return ResponseEntity.noContent().build();
     }
 
+    //**************************************Metodo Fein parcial consultar Series***************************//
+
+//    @GetMapping("/series/{genre}")
+//    public List<SerieDTO> getSerieByGenre(@PathVariable String genre) {
+//
+//        return ServiceSerie.FeinBuscarPorGeneroSerie(genre);
+//    }
+
+
     //**********************************************************************************************//
-    //**********************************************************************************************//
+
 
 
 }

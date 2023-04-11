@@ -7,12 +7,9 @@ import com.dh.catalogservice.service.ServiceMovie;
 import com.dh.catalogservice.service.ServiceSerie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -24,16 +21,29 @@ public class CatalogoController {
     @Autowired
     private ServiceSerie ServiceSerie;
 
+    //********************Consulta Base de datos Local Mongo Por Movie y Serie***************//
+
+//    @GetMapping("/{genre}")
+//    ResponseEntity<CatalogoDTO>  GetDataMongo(@PathVariable String genre) {
+//        List<MovieMongoDTO> movies = ServiceMovie.BuscarPorGeneroMovie(genre);
+//          List<SerieDTO> series = ServiceSerie.BuscarPorGeneroSerie(genre);
+//          CatalogoDTO productos = new CatalogoDTO(genre, movies, series);
+//
+//        return ResponseEntity.ok(productos);
+//    }
 
 
+    //********************Consulta Base de datos Local Mongo Por Movie y Serie con CircuitBreacker***************//
     @GetMapping("/{genre}")
-    ResponseEntity<CatalogoDTO>  GetDataMongo(@PathVariable String genre) {
-        List<MovieMongoDTO> movies = ServiceMovie.BuscarPorGeneroMovie(genre);
-          List<SerieDTO> series = ServiceSerie.BuscarPorGeneroSerie(genre);
-          CatalogoDTO productos = new CatalogoDTO(genre, movies, series);
+    ResponseEntity<CatalogoDTO>  GetDataMongo(@PathVariable String genre, @RequestParam(defaultValue = "false") Boolean throwError, HttpServletResponse response) {
+        List<MovieMongoDTO> movies = ServiceMovie.CBBuscarPorGeneroMovie(genre,throwError);
+        List<SerieDTO> series = ServiceSerie.BuscarPorGeneroSerie(genre);
+        CatalogoDTO productos = new CatalogoDTO(genre, movies, series);
 
         return ResponseEntity.ok(productos);
     }
+
+    //****************************************************************************************//
 
 
 
