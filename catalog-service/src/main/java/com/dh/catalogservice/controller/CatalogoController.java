@@ -23,18 +23,18 @@ public class CatalogoController {
 
     //********************Consulta Base de datos Local Mongo Por Movie y Serie***************//
 
-//    @GetMapping("/{genre}")
-//    ResponseEntity<CatalogoDTO>  GetDataMongo(@PathVariable String genre) {
-//        List<MovieMongoDTO> movies = ServiceMovie.BuscarPorGeneroMovie(genre);
-//          List<SerieDTO> series = ServiceSerie.BuscarPorGeneroSerie(genre);
-//          CatalogoDTO productos = new CatalogoDTO(genre, movies, series);
-//
-//        return ResponseEntity.ok(productos);
-//    }
+    @GetMapping("/{genre}")
+    ResponseEntity<CatalogoDTO>  GetDataMongo(@PathVariable String genre) {
+        List<MovieMongoDTO> movies = ServiceMovie.BuscarPorGeneroMovie(genre);
+          List<SerieDTO> series = ServiceSerie.BuscarPorGeneroSerie(genre);
+          CatalogoDTO productos = new CatalogoDTO(genre, movies, series);
+
+        return ResponseEntity.ok(productos);
+    }
 
 
     //********************Consulta Base de datos Local Mongo Por Movie y Serie con CircuitBreacker***************//
-    @GetMapping("/{genre}")
+    @GetMapping("/circuitbreacker/{genre}")
     ResponseEntity<CatalogoDTO>  GetDataMongo(@PathVariable String genre, @RequestParam(defaultValue = "false") Boolean throwError, HttpServletResponse response) {
         List<MovieMongoDTO> movies = ServiceMovie.CBBuscarPorGeneroMovie(genre,throwError);
         List<SerieDTO> series = ServiceSerie.BuscarPorGeneroSerie(genre);
